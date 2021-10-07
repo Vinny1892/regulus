@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+main{
+    font-size: unquote("clamp(1em, 1em+1vw, 1.5em)");
+    display: grid;
+    grid-template-rows:  1.9fr 1fr 1fr 0.5fr ;
+}
+
+body {
+    display:grid;
+    grid-template-rows: 1fr 80px
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a:visited{
+    color: #ffff;
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+}

@@ -1,0 +1,158 @@
+{{  $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify  }}
+{{ $imageIntroduction := resources.Get "image/1.svg" }}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="primary-section">
+            <nav class="navbar">
+                <div class="container-logo">
+                    <div style="padding-right: 3px; color:#5cc4c4 ">&lt;</div> 
+                    <span><strong>Vinicius Espindola</strong></span>
+                    <div style="padding-left:3px;color:#5cc4c4"> /&gt;</div>
+                </div>
+                <ul class="zelda">
+                    <li class="link"><a href="#about">Sobre</a></li>
+                    <li class="link"><a href="#skills" >Habilidades</a></li>
+                    <!-- <li class="link">lorem</li> -->
+                    <li class="link"><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <section class="section-introduction">
+                <div class="container-introduction">
+
+                    <div class="office-introduction">ENGENHEIRO DE SOFTWARE</div>
+                    <h1 class="name-introduction">Vinicius Espindola</h1>
+                    <p class="text-introduction">Desenvolvedor de software voltado principalmente para area de desenvolvimento
+                    web, com foco na parte de backend, banco de dados, arquitetura de software, segurança e cloud. que no tempo livre gosta 
+                    jogar video game e ler livros, desde tecnico até quadrinhos e classicos.
+                    </p>
+                    <div class="container-button">
+                        <a  href="./assets/curriculo/curriculo.pdf"  class="button-curriculo fill" download="curriculo.pdf" type="application/pdf">BAIXAR CURRICULO</a>
+                    </div>
+                </div>
+                <div class="container-image">
+                    <img    src="{{ $imageIntroduction.Permalink }}" />
+                </div>
+               
+            </section>
+            <section >
+                <img  class="divider" src="./assets/customDividerDiferenciado.svg" alt="waves top divider"/>
+            </section>
+        </section>
+      
+        <section class="second-section" id="about">
+            <div class="container-about">
+                <img  class="image-about"  src="https://avatars.githubusercontent.com/u/41531003?v=4"  >
+                
+                <span class="name-about"><strong>Vinicius Espindola</strong></span>
+                <ul class="icons-social-media">
+                    <li>
+                        <a href="https://www.linkedin.com/in/vinicius-espindola-a539b8192/" title="linkedin" target="_blank">
+                            <img  alt="icon linkedin" class="icon" src="assets/icon/linkedin.svg"/>
+                        </a>
+                    </li>
+                    <li><img  alt="icon medium" class="icon" src="assets/icon/medium.svg"/></li>
+                    <li>
+                        <a href="https://github.com/Vinny1892" title="github" target="_blank">
+                            <img  alt="icon github"class="icon" src="assets/icon/github.svg"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-text-about">
+                <h1 class="title-about">Sobre</h1>
+                <h2 class="subtitle-about">conheça um pouco sobre mim</h2>
+                <p class="text-about">Sou engenheiro de software com formação em técnico de informatica pelo 
+                    Instituto Federal de Mato Grosso do Sul e atualmente cursando sistemas de informação.
+                    passei maior parte da minha graduação em laboratorio de pesquisa, onde eu  ajudei com projetos we,mobile,
+                    organização de eventos como o WCPD(Workshop de Computação paralela e distribuida) e Semana da Quimica, 
+                    auxiliei em um projeto de pesquisa sobre processamento de imagens de satelite utilizando o software timesat,
+                    ministrei cursos de docker e  infraestrutura como codigo na Semana da computação e na 
+                    Escola regional de alto desempenho. No meu tempo livre gosto de ler um livro e jogar um valorant de vez em quando.
+                </p>
+            </div>
+        </section>
+        <section class="third-section" id="skills">
+        <h1>Habilidades</h1>
+            <ul class="skills" >
+                <li  class="container-skill">
+                        <span>Elixir</span>
+                        <img class="skill" src="./assets/technologies/elixir.svg">
+                        <div class="progess-bar elixir"></div>
+                    </li>
+                <li  class="container-skill" > 
+                        <span>Javascript</span>
+                        <img  class="skill" src="./assets/technologies/javascript.svg">
+                        <div class="progess-bar javascript" ></div> 
+                    </div>
+                </li>
+                <li class="container-skill">
+                        <span>Docker</span>
+                        <img class="skill" src="./assets/technologies/docker.svg">
+                        <div class="progess-bar docker" ></div>
+                </li> 
+                <li class="container-skill">
+                        <span>Kubernetes</span>
+                        <img  class="skill" src="./assets/technologies/k8s.svg">
+                        <div class="progess-bar k8s" ></div>
+                </li>
+                <li class="container-skill" >
+                        <span>Golang</span>
+                        <img class="skill" src="./assets/technologies/golang.svg">
+                        <div class="progess-bar golang" ></div>
+                </li>
+            </ul>
+
+        </section>
+        <section class="four-section" id="contact">
+            <h1>Contato</h1>
+            <p>Caso queira entrar em contato comigo ou olhar alguns projetos, minhas redes sociais estão abaixo:</p>
+            <ul class="socials-media-contact" >
+                <li>
+                <a href="https://google.com.br" class="social-media-contact" >
+                    <div><img height="40px" src="./assets/icon/linkedin.svg"></div> <div> Linkedin </div>
+                </a>
+                </li>
+                <li>
+                    <a class="social-media-contact"  target="__blank" href="https://github.com/Vinny1892">
+                        <div>
+                            <img height="40px" src="./assets/icon/github.svg" > 
+                        </div>
+                        <div>
+                            Github
+                        </div>
+                    </a>
+                </li>
+                <li >  
+                    <a class="social-media-contact" href="https://t.me/vinny1892e" target="__blank">
+                        <div>
+                            <img height="40px" src="./assets/icon/telegram.svg" > 
+                        </div>
+                        <div>
+                            Telegram
+                        </div>
+                    </a>
+                </li>
+                <li class="social-media-contact">  <div>
+                    <img height="25px" src="./assets/icon/email.svg" > 
+                </div>
+                <div>
+                    Email
+                </div></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>©2020 Vinicius Espindola - Design Inspired by <span>Lavinia Melo</span></p>
+    </footer>
+</body>
+</html>
