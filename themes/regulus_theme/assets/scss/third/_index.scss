@@ -1,0 +1,80 @@
+
+.third-section {
+    background-color:#222733;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+}
+
+.third-section > h1 {
+    justify-self: center;
+    color: #F8F8F9;
+    align-self: center;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    justify-items: center;
+}
+
+.skill{
+    height: 120px;
+}
+
+.container-skill{
+    /* height:100%;
+    width: 100%; */
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 20px 0.2fr 0.2fr;
+    justify-items: center;
+}
+
+.container-skill > span{
+    color:#f8f8f994
+}
+
+
+.progess-bar{
+    align-self: center;
+    border-radius: 20px;
+    height: 5px;
+    padding: 3px;
+}
+
+.elixir {
+    background-color: #5B3F6E;
+    width: 100%;
+
+}
+.javascript{
+    background-color: #F7DF1E;
+    width: 100%;
+
+
+}
+.golang{
+    background-color: #74CDDD;
+    width: 100%;
+
+}
+.docker {
+    background-color: #3D8BB3;
+    width: 100%;
+
+}
+.k8s{
+    background-color: #326CE6;
+    width: 100%;
+
+}
+
+@media(max-width: 720px){
+    .skills{
+        display: grid;
+        grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 40px
+    }
+}
