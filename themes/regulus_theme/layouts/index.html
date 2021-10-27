@@ -1,5 +1,21 @@
 {{  $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify  }}
 {{ $imageIntroduction := resources.Get "image/1.svg" }}
+{{ $wavesTop := resources.Get "image/customDividerDiferenciado.svg"}}
+
+
+{{ $elixirIcon := resources.Get "technologies/elixir.svg" }}
+{{ $golangIcon := resources.Get "technologies/golang.svg" }}
+{{ $javascriptIcon := resources.Get "technologies/javascript.svg" }}
+{{ $k8sIcon := resources.Get "technologies/k8s.svg" }}
+{{ $dockerIcon := resources.Get "technologies/docker.svg" }}
+
+{{ $linkedinIcon := resources.Get "icon/linkedin.svg" }}
+{{ $githubIcon := resources.Get "icon/github.svg"}}
+{{ $mediumIcon := resources.Get "icon/medium.svg"}}
+{{ $telegramIcon := resources.Get "icon/telegram.svg"}}
+{{ $emailIcon := resources.Get "icon/email.svg"}}
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,25 +61,24 @@
                
             </section>
             <section >
-                <img  class="divider" src="./assets/customDividerDiferenciado.svg" alt="waves top divider"/>
+                <img  class="divider" src="{{ $wavesTop.RelPermalink }}" alt="waves top divider"/>
             </section>
         </section>
       
         <section class="second-section" id="about">
-            <div class="container-about">
                 <img  class="image-about"  src="https://avatars.githubusercontent.com/u/41531003?v=4"  >
                 
                 <span class="name-about"><strong>Vinicius Espindola</strong></span>
                 <ul class="icons-social-media">
                     <li>
                         <a href="https://www.linkedin.com/in/vinicius-espindola-a539b8192/" title="linkedin" target="_blank">
-                            <img  alt="icon linkedin" class="icon" src="assets/icon/linkedin.svg"/>
+                            <img  alt="icon linkedin" class="icon" src="{{ $linkedinIcon.RelPermalink}}"/>
                         </a>
                     </li>
-                    <li><img  alt="icon medium" class="icon" src="assets/icon/medium.svg"/></li>
+                    <li><img  alt="icon medium" class="icon" src="{{ $mediumIcon.RelPermalink }}"/></li>
                     <li>
                         <a href="https://github.com/Vinny1892" title="github" target="_blank">
-                            <img  alt="icon github"class="icon" src="assets/icon/github.svg"/>
+                            <img  alt="icon github"class="icon" src="{{ $githubIcon.RelPermalink }}"/>
                         </a>
                     </li>
                 </ul>
@@ -86,28 +101,28 @@
             <ul class="skills" >
                 <li  class="container-skill">
                         <span>Elixir</span>
-                        <img class="skill" src="">
+                        <img class="skill" src="{{ $elixirIcon.RelPermalink }}">
                         <div class="progess-bar elixir"></div>
                     </li>
                 <li  class="container-skill" > 
                         <span>Javascript</span>
-                        <img  class="skill" src="./assets/technologies/javascript.svg">
+                        <img  class="skill" src="{{ $javascriptIcon.RelPermalink }}">
                         <div class="progess-bar javascript" ></div> 
                     </div>
                 </li>
                 <li class="container-skill">
                         <span>Docker</span>
-                        <img class="skill" src="./assets/technologies/docker.svg">
+                        <img class="skill" src="{{ $dockerIcon.RelPermalink }}">
                         <div class="progess-bar docker" ></div>
                 </li> 
                 <li class="container-skill">
                         <span>Kubernetes</span>
-                        <img  class="skill" src="./assets/technologies/k8s.svg">
+                        <img  class="skill" src="{{$k8sIcon.RelPermalink  }}">
                         <div class="progess-bar k8s" ></div>
                 </li>
                 <li class="container-skill" >
                         <span>Golang</span>
-                        <img class="skill" src="./assets/technologies/golang.svg">
+                        <img class="skill" src="{{ $golangIcon.RelPermalink }}">
                         <div class="progess-bar golang" ></div>
                 </li>
             </ul>
@@ -119,13 +134,13 @@
             <ul class="socials-media-contact" >
                 <li>
                 <a href="https://google.com.br" class="social-media-contact" >
-                    <div><img height="40px" src="./assets/icon/linkedin.svg"></div> <div> Linkedin </div>
+                    <div><img height="40px" src="{{ $linkedinIcon.RelPermalink }}"></div> <div> Linkedin </div>
                 </a>
                 </li>
                 <li>
                     <a class="social-media-contact"  target="__blank" href="https://github.com/Vinny1892">
                         <div>
-                            <img height="40px" src="./assets/icon/github.svg" > 
+                            <img height="40px" src="{{ $githubIcon.RelPermalink }}" > 
                         </div>
                         <div>
                             Github
@@ -135,15 +150,14 @@
                 <li >  
                     <a class="social-media-contact" href="https://t.me/vinny1892e" target="__blank">
                         <div>
-                            <img height="40px" src="./assets/icon/telegram.svg" > 
-                        </div>
+                            <img height="40px" src="{{ $telegramIcon.RelPermalink }}">
                         <div>
                             Telegram
                         </div>
                     </a>
                 </li>
                 <li class="social-media-contact">  <div>
-                    <img height="25px" src="./assets/icon/email.svg" > 
+                    <img height="25px" src="{{ $emailIcon.RelPermalink }}" > 
                 </div>
                 <div>
                     Email
