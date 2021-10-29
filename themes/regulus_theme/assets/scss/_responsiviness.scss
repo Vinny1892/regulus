@@ -1,0 +1,89 @@
+@media (max-width: 1025px) {
+    main{
+        grid-template-rows:  0.5fr 1fr 1fr 0.5fr;
+    } 
+    .zelda{
+        display: none
+    }
+    .navbar{
+        display: flex;
+        justify-self: center;
+    }
+    .container-logo{
+        width: 100%;
+        margin-left: 0px;
+    }
+ 
+    .section-introduction{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .container-image{
+        max-width: 60%
+    }
+    .text-introduction{
+        margin-right: 150px;
+    }
+
+    .second-section {
+        align-items: center;
+    }
+    .container-about {
+        gap: 0px;
+        grid-template-rows: 300px 70px
+    }
+
+ }
+
+ 
+
+ @media(max-width: 719px){
+    main{
+        grid-template-rows:  0.5fr 0.2fr 1fr 0.5fr;
+    } 
+     .second-section{
+         grid-template-rows: 500px 500px;
+     }
+ }
+
+ @media (max-width: 768px) {
+    .second-section{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr
+    }
+    
+}
+
+
+ @media (max-width: 500px){
+    .primary-section {
+        grid-template-rows: 150px 1fr  100px;
+    }
+    .container-image{
+        justify-content: center;
+        max-width: 70%
+    }
+    .text-introduction{
+        margin-right: 15px;
+    }
+    .container-introduction{
+        margin-left: 30px;
+    }
+
+}
+
+@media (max-width: 450px){}
+
+
+@media(max-width: 390px){
+    .text-introduction{
+        text-align: justify;
+    }
+    .name-introduction {
+        font-size: 35px;
+
+    }
+    .office-introduction{
+        font-size: 13px;
+    }
+}

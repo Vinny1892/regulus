@@ -1,7 +1,7 @@
-{{  $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify  }}
+{{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify  }}
 {{ $imageIntroduction := resources.Get "image/1.svg" }}
 {{ $wavesTop := resources.Get "image/customDividerDiferenciado.svg"}}
-
+{{ $curriculo :=  resources.Get "curriculo/curriculo.pdf" }}
 
 {{ $elixirIcon := resources.Get "technologies/elixir.svg" }}
 {{ $golangIcon := resources.Get "technologies/golang.svg" }}
@@ -18,26 +18,28 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portifolio | Vinicius</title>
 </head>
+
 <body>
     <main>
         <section class="primary-section">
             <nav class="navbar">
                 <div class="container-logo">
-                    <div style="padding-right: 3px; color:#5cc4c4 ">&lt;</div> 
+                    <div style="padding-right: 3px; color:#5cc4c4 ">&lt;</div>
                     <span><strong>Vinicius Espindola</strong></span>
                     <div style="padding-left:3px;color:#5cc4c4"> /&gt;</div>
                 </div>
                 <ul class="zelda">
                     <li class="link"><a href="#about">Sobre</a></li>
-                    <li class="link"><a href="#skills" >Habilidades</a></li>
+                    <li class="link"><a href="#skills">Habilidades</a></li>
                     <!-- <li class="link">lorem</li> -->
                     <li class="link"><a href="#contact">Contato</a></li>
                 </ul>
@@ -47,38 +49,43 @@
 
                     <div class="office-introduction">ENGENHEIRO DE SOFTWARE</div>
                     <h1 class="name-introduction">Vinicius Espindola</h1>
-                    <p class="text-introduction">Desenvolvedor de software voltado principalmente para area de desenvolvimento
-                    web, com foco na parte de backend, banco de dados, arquitetura de software, segurança e cloud. que no tempo livre gosta 
-                    jogar video game e ler livros, desde tecnico até quadrinhos e classicos.
+                    <p class="text-introduction">Desenvolvedor de software voltado principalmente para area de
+                        desenvolvimento
+                        web, com foco na parte de backend, banco de dados, arquitetura de software, segurança e cloud.
+                        que no tempo livre gosta
+                        jogar video game e ler livros, desde tecnico até quadrinhos e classicos.
                     </p>
                     <div class="container-button">
-                        <a  href="./assets/curriculo/curriculo.pdf"  class="button-curriculo fill" download="curriculo.pdf" type="application/pdf">BAIXAR CURRICULO</a>
+                        <a href="{{ $curriculo.RelPermalink }}" class="button-curriculo fill" download="curriculo.pdf"
+                            type="application/pdf">BAIXAR CURRICULO</a>
                     </div>
                 </div>
                 <div class="container-image">
-                    <img    src="{{ $imageIntroduction.Permalink }}" />
+                    <img src="{{ $imageIntroduction.Permalink }}" />
                 </div>
-               
+
             </section>
-            <section >
-                <img  class="divider" src="{{ $wavesTop.RelPermalink }}" alt="waves top divider"/>
+            <section>
+                <img class="divider" src="{{ $wavesTop.RelPermalink }}" alt="waves top divider" />
             </section>
         </section>
-      
+
         <section class="second-section" id="about">
-                <img  class="image-about"  src="https://avatars.githubusercontent.com/u/41531003?v=4"  >
-                
+            <div class="container-about">
+                <img class="image-about" src="https://avatars.githubusercontent.com/u/41531003?v=4">
+
                 <span class="name-about"><strong>Vinicius Espindola</strong></span>
                 <ul class="icons-social-media">
                     <li>
-                        <a href="https://www.linkedin.com/in/vinicius-espindola-a539b8192/" title="linkedin" target="_blank">
-                            <img  alt="icon linkedin" class="icon" src="{{ $linkedinIcon.RelPermalink}}"/>
+                        <a href="https://www.linkedin.com/in/vinny1892/"  title="linkedin"
+                            target="_blank">
+                            <img alt="icon linkedin" class="icon" src="{{ $linkedinIcon.RelPermalink}}" />
                         </a>
                     </li>
-                    <li><img  alt="icon medium" class="icon" src="{{ $mediumIcon.RelPermalink }}"/></li>
+                    <li><img alt="icon medium" class="icon" src="{{ $mediumIcon.RelPermalink }}" /></li>
                     <li>
                         <a href="https://github.com/Vinny1892" title="github" target="_blank">
-                            <img  alt="icon github"class="icon" src="{{ $githubIcon.RelPermalink }}"/>
+                            <img alt="icon github" class="icon" src="{{ $githubIcon.RelPermalink }}" />
                         </a>
                     </li>
                 </ul>
@@ -86,44 +93,59 @@
             <div class="container-text-about">
                 <h1 class="title-about">Sobre</h1>
                 <h2 class="subtitle-about">conheça um pouco sobre mim</h2>
-                <p class="text-about">Sou engenheiro de software com formação em técnico de informatica pelo 
+                <p class="text-about">Sou engenheiro de software com formação em técnico de informatica pelo
                     Instituto Federal de Mato Grosso do Sul e atualmente cursando sistemas de informação.
-                    passei maior parte da minha graduação em laboratorio de pesquisa, onde eu  ajudei com projetos we,mobile,
-                    organização de eventos como o WCPD(Workshop de Computação paralela e distribuida) e Semana da Quimica, 
-                    auxiliei em um projeto de pesquisa sobre processamento de imagens de satelite utilizando o software timesat,
-                    ministrei cursos de docker e  infraestrutura como codigo na Semana da computação e na 
-                    Escola regional de alto desempenho. No meu tempo livre gosto de ler um livro e jogar um valorant de vez em quando.
+                    passei maior parte da minha graduação em laboratorio de pesquisa, onde eu ajudei com projetos
+                    we,mobile,
+                    organização de eventos como o WCPD(Workshop de Computação paralela e distribuida) e Semana da
+                    Quimica,
+                    auxiliei em um projeto de pesquisa sobre processamento de imagens de satelite utilizando o software
+                    timesat,
+                    ministrei cursos de docker e infraestrutura como codigo na Semana da computação e na
+                    Escola regional de alto desempenho. No meu tempo livre gosto de ler um livro e jogar um valorant de
+                    vez em quando.
                 </p>
             </div>
         </section>
         <section class="third-section" id="skills">
-        <h1>Habilidades</h1>
-            <ul class="skills" >
-                <li  class="container-skill">
-                        <span>Elixir</span>
-                        <img class="skill" src="{{ $elixirIcon.RelPermalink }}">
-                        <div class="progess-bar elixir"></div>
-                    </li>
-                <li  class="container-skill" > 
+            <h1>Habilidades</h1>
+            <ul class="skills">
+
+                <li >
+                <a class="container-skill" title="Pagina Oficial Elixir" target="__blank"  href="https://elixir-lang.org/" >
+                    <span>Elixir</span>
+                    <img class="skill" src="{{ $elixirIcon.RelPermalink }}">
+                    <div class="progess-bar elixir"></div>
+                </a>
+                </li>
+                <li>
+                    <a  class="container-skill"title="Javascript" target="__blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" >
                         <span>Javascript</span>
-                        <img  class="skill" src="{{ $javascriptIcon.RelPermalink }}">
-                        <div class="progess-bar javascript" ></div> 
-                    </div>
+                        <img class="skill" src="{{ $javascriptIcon.RelPermalink }}">
+                        <div class="progess-bar javascript"></div>
+                    </a>
+               
+                </li>
+                <li>
+                <a  class="container-skill" title="Docker" target="__blank" href="https://www.docker.com/">
+                    <span>Docker</span>
+                    <img class="skill" src="{{ $dockerIcon.RelPermalink }}">
+                    <div class="progess-bar docker"></div>
+                </a>
                 </li>
                 <li class="container-skill">
-                        <span>Docker</span>
-                        <img class="skill" src="{{ $dockerIcon.RelPermalink }}">
-                        <div class="progess-bar docker" ></div>
-                </li> 
-                <li class="container-skill">
-                        <span>Kubernetes</span>
-                        <img  class="skill" src="{{$k8sIcon.RelPermalink  }}">
-                        <div class="progess-bar k8s" ></div>
+                    <a  class="container-skill" title="Kubernetes" target="__blank" href="https://kubernetes.io/">
+                    <span>Kubernetes</span>
+                    <img class="skill" src="{{$k8sIcon.RelPermalink  }}">
+                    <div class="progess-bar k8s"></div>
+                    </a>
                 </li>
-                <li class="container-skill" >
-                        <span>Golang</span>
-                        <img class="skill" src="{{ $golangIcon.RelPermalink }}">
-                        <div class="progess-bar golang" ></div>
+                <li class="container-skill">
+                    <a  class="container-skill" title="Golang" target="__blank" href="https://golang.org/">
+                    <span>Golang</span>
+                    <img class="skill" src="{{ $golangIcon.RelPermalink }}">
+                    <div class="progess-bar golang"></div>
+                    </a>
                 </li>
             </ul>
 
@@ -131,42 +153,53 @@
         <section class="four-section" id="contact">
             <h1>Contato</h1>
             <p>Caso queira entrar em contato comigo ou olhar alguns projetos, minhas redes sociais estão abaixo:</p>
-            <ul class="socials-media-contact" >
+            <ul class="socials-media-contact">
                 <li>
-                <a href="https://google.com.br" class="social-media-contact" >
-                    <div><img height="40px" src="{{ $linkedinIcon.RelPermalink }}"></div> <div> Linkedin </div>
-                </a>
+                    <a href="https://www.linkedin.com/in/vinny1892"  title="linkedin" target="__blank" class="social-media-contact">
+                        <div><img height="40px" alt="linkedin icon" src="{{ $linkedinIcon.RelPermalink }}"></div>
+                        <div> Linkedin </div>
+                    </a>
                 </li>
                 <li>
-                    <a class="social-media-contact"  target="__blank" href="https://github.com/Vinny1892">
+                    <a class="social-media-contact" title="github"  target="__blank" href="https://github.com/Vinny1892">
                         <div>
-                            <img height="40px" src="{{ $githubIcon.RelPermalink }}" > 
+                            <img height="40px" alt="github icon" src="{{ $githubIcon.RelPermalink }}">
                         </div>
                         <div>
                             Github
                         </div>
                     </a>
                 </li>
-                <li >  
-                    <a class="social-media-contact" href="https://t.me/vinny1892e" target="__blank">
+                <li>
+                    <a class="social-media-contact"  title="telegram" href="https://t.me/vinny1892e" target="__blank">
                         <div>
-                            <img height="40px" src="{{ $telegramIcon.RelPermalink }}">
-                        <div>
-                            Telegram
+                            <img height="40px" alt="telegram icon" src="{{ $telegramIcon.RelPermalink }}">
                         </div>
+                            <div>
+                                Telegram
+                            </div>
                     </a>
                 </li>
-                <li class="social-media-contact">  <div>
-                    <img height="25px" src="{{ $emailIcon.RelPermalink }}" > 
-                </div>
-                <div>
-                    Email
-                </div></li>
+                <li >
+                <a href="mailto:vinnyaoe@gmail.com"  title="email" target="__blank" class="social-media-contact">
+                    <div>
+                        <img height="25px" alt="email icon" src="{{ $emailIcon.RelPermalink }}">
+                    </div>
+                    <div>
+                        Email
+                    </div>
+                </a>
+                </li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>©2020 Vinicius Espindola - Design Inspired by <span>Lavinia Melo</span></p>
+        <p>©2020 Vinicius Espindola - Design Inspired by <span>
+            <a
+            class="link-lavinia"
+            href="https://dribbble.com/shots/14125478-Developer-Personal-Portifolio-Website?utm_source=Clipboard_Shot&utm_campaign=laviniamelo&utm_content=Developer%20Personal%20Portifolio%20-%20Website&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=laviniamelo&utm_content=Developer%20Personal%20Portifolio%20-%20Website&utm_medium=Social_Share" 
+            target="__blank">Lavinia Melo</a></span></p>
     </footer>
 </body>
+
 </html>
